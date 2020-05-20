@@ -19,7 +19,7 @@ export default class Index extends Component {
     ImagePicker.openPicker({
       width: 200,
       height: 200,
-      cropping: true,
+      // cropping: true,
     })
       .then(image => {
         console.log(image.path);

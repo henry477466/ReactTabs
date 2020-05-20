@@ -11,6 +11,7 @@ import {
   Text,
   TouchableHighlight,
   Button,
+  Image,
   ToastAndroid,
 } from 'react-native';
 
@@ -20,30 +21,49 @@ export default class Index extends Component {
     this.state = {};
   }
   getPath = () => {
+    // var xhr = new XMLHttpRequest();
+    // xhr.onreadystatechange = function(){
+    //   console.log('onreadystatechange', this.readyState, XMLHttpRequest.DONE)
+    // };
+    // xhr.onerror = function(e){
+    //   console.log('onerror', e)
+    // };
+    // let url = `${RNFS.DocumentDirectoryPath}/epub/1.jpg`;
+    // // let url = 'http://www.tuibook.com/szyun/books/caitianxu/1.epub';
+    // xhr.open("GET", url, true);
+    // xhr.responseType = "arraybuffer";
+    // xhr.send();
+    // console.log(`${RNFS.DocumentDirectoryPath}`)
+    // console.log(`${RNFS.MainBundlePath}`)
+    // console.log(`${RNFS.CachesDirectoryPath}`)
+    // console.log(`${RNFS.TemporaryDirectoryPath}`)
+    // console.log(`${RNFS.ExternalDirectoryPath}`)
+    // console.log(`${RNFS.ExternalStorageDirectoryPath}`)
     //判断文件 或者目录 是否存在
-    RNFS.exists(`${RNFS.DocumentDirectoryPath}/epub/1.epub`).then(res => {
-      console.log('文件是否存在：', res);
-    });
-    //判断文件 或者目录 是否存在
-    RNFS.exists(`${RNFS.DocumentDirectoryPath}/epub`).then(bool => {
-      console.log('文件夹是否存在：', bool);
-      if (!bool) {
-        //创建文件夹
-        RNFS.mkdir(`${RNFS.DocumentDirectoryPath}/epub`).then(cc => {
-          console.log('创建结果：', cc);
-        });
-      }
-    });
+    // RNFS.exists(`${RNFS.DocumentDirectoryPath}/epub/1.jpg`).then(res => {
+    //   console.log('文件是否存在：', res);
+    // });
+    // //判断文件 或者目录 是否存在
+    // RNFS.exists(`${RNFS.DocumentDirectoryPath}/epub`).then(bool => {
+    //   console.log('文件夹是否存在：', bool);
+    //   if (!bool) {
+    //     //创建文件夹
+    //     RNFS.mkdir(`${RNFS.DocumentDirectoryPath}/epub`).then(cc => {
+    //       console.log('创建结果：', cc);
+    //     });
+    //   }
+    // });
     //获取目录下的文件列表
-    RNFS.readDir(`${RNFS.DocumentDirectoryPath}/epub`).then(res => {
-      res.forEach(item => {
-        console.log('文件：', item.name);
-      });
-    });
+    // RNFS.readDir(`${RNFS.DocumentDirectoryPath}/epub`).then(res => {
+    //   res.forEach(item => {
+    //     console.log('文件：', item.name);
+    //   });
+    // });
   };
   downFile = () => {
-    const url = 'http://www.tuibook.com/szyun/books/caitianxu/11.epub';
-    const downloadDest = `${RNFS.DocumentDirectoryPath}/epub/1.epub`;
+    const url = 'http://www.tuibook.com/szyun/books/caitianxu/1.epub';
+    // const url = 'https://img-play.daidaidj.com/img/359dee657879e16bad191bf48b5f4ed7.jpg';
+    const downloadDest = `${RNFS.DocumentDirectoryPath}/epub/123.epub`;
     const background = true;
     const progressDivider = 1;
     const begin = () => {
@@ -87,6 +107,8 @@ export default class Index extends Component {
       });
   };
   render() {
+    let cc = `${RNFS.DocumentDirectoryPath}/epub/1.jpg`;
+    console.log(cc)
     return (
       <Modal
         animationType="slide"
