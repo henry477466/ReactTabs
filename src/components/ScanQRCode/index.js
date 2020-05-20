@@ -11,7 +11,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-export default class ScanQRCode extends Component {
+export default class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -105,7 +105,7 @@ export default class ScanQRCode extends Component {
                   <Text style={styles.errorText}>无效二维码</Text>
                 ) : null}
               </View>
-              <View style={styles.footerAction}>
+              <View>
                 <TouchableHighlight
                   onPress={this.props.close}
                   activeOpacity={1}
@@ -156,9 +156,6 @@ const styles = StyleSheet.create({
   },
   errParent: {
     height: 150,
-  },
-  footerAction: {
-    color: '#fff',
   },
   border: {
     flex: 0,

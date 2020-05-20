@@ -12,11 +12,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import { WebView } from 'react-native-webview';
-
 import ScanQRCode from './src/components/ScanQRCode';
 import ImagePicker from './src/components/ImagePicker';
-import NativeFile from './src/components/NativeFile';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +21,6 @@ class App extends React.Component {
     this.state = {
       ScanQRCode_visible: false,
       ImagePicker_visible: false,
-      NativeFile_visible: false,
     };
   }
   async changeVim() {
@@ -51,17 +47,11 @@ class App extends React.Component {
       ImagePicker_visible: !this.state.ImagePicker_visible,
     });
   }
-  changeFile = () =>{
-    this.setState({
-      NativeFile_visible: !this.state.NativeFile_visible,
-    });
-  }
 
   render() {
     return (
       <>
         <StatusBar barStyle="dark-content" />
-        <WebView source={{ uri: 'https://reactnative.cn/' }} />
         <SafeAreaView>
           <ScrollView style={styles.scrollView}>
             <View style={{marginTop: 20}}>
@@ -69,9 +59,6 @@ class App extends React.Component {
             </View>
             <View style={{marginTop: 20}}>
               <Button title="使用照片" onPress={this.changePic.bind(this)} />
-            </View>
-            <View style={{marginTop: 20}}>
-              <Button title="文件管理" onPress={this.changeFile.bind(this)} />
             </View>
           </ScrollView>
           {/* 扫码 */}
@@ -81,10 +68,6 @@ class App extends React.Component {
           {/* 照片 */}
           {this.state.ImagePicker_visible ? (
             <ImagePicker close={this.changePic.bind(this)} />
-          ) : null}
-          {/* 文件 */}
-          {this.state.NativeFile_visible ? (
-            <NativeFile close={this.changeFile.bind(this)} />
           ) : null}
         </SafeAreaView>
       </>
