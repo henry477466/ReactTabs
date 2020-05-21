@@ -969,6 +969,11 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
+"@react-native-community/netinfo@^5.9.0":
+  version "5.9.0"
+  resolved "https://registry.npm.taobao.org/@react-native-community/netinfo/download/@react-native-community/netinfo-5.9.0.tgz#8bf2b96ce66ecaacab5a1f6f88b41526c9331481"
+  integrity sha1-i/K5bOZuyqyrWh9viLQVJskzFIE=
+
 "@types/babel__core@^7.1.0":
   version "7.1.7"
   resolved "https://registry.npm.taobao.org/@types/babel__core/download/@types/babel__core-7.1.7.tgz#1dacad8840364a57c98d0dd4855c6dd3752c6b89"
@@ -4980,6 +4985,11 @@ react-native-image-crop-picker@^0.31.1:
   version "0.31.1"
   resolved "https://registry.npm.taobao.org/react-native-image-crop-picker/download/react-native-image-crop-picker-0.31.1.tgz#b56248a9e31d62f1c6e7c2f85d296869c32af4cd"
   integrity sha1-tWJIqeMdYvHG58L4XSloacMq9M0=
+
+react-native-splash-screen@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/react-native-splash-screen/download/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
+  integrity sha1-1H7IVXsbqYjuPqmNAUYwgbYP/0U=
 
 react-native-webview@^9.4.0:
   version "9.4.0"

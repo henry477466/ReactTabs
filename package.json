@@ -10,11 +10,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^5.9.0",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-camera": "^3.26.0",
     "react-native-fs": "^2.16.6",
     "react-native-image-crop-picker": "^0.31.1",
+    "react-native-splash-screen": "^3.2.0",
     "react-native-webview": "^9.4.0",
     "react-native-zip-archive": "^5.0.2"
   },

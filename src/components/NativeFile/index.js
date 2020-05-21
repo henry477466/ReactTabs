@@ -12,7 +12,6 @@ import {
   Text,
   TouchableHighlight,
   Button,
-  Image,
   ToastAndroid,
 } from 'react-native';
 
@@ -46,7 +45,8 @@ export default class Index extends Component {
         console.log('文件：', item.name);
       });
     });
-    RNFS.readDir(`${RNFS.DocumentDirectoryPath}/epub`).then(res => {
+    console.log(`${RNFS.DocumentDirectoryPath}/epub/1/META-INF`)
+    RNFS.readDir(`${RNFS.DocumentDirectoryPath}/epub/1/META-INF/container.xml`).then(res => {
       console.log('xxxxxxxxxxxxxxxxxxxxxxxxxx');
       res.forEach(item => {
         console.log('图书：', item.name);
@@ -94,11 +94,11 @@ export default class Index extends Component {
           this.setState({output: JSON.stringify(res)});
           this.setState({imagePath: 'file://' + downloadDest});
         } else {
-          console.log('上传失败');
+          console.log('下载失败');
         }
       })
       .catch(err => {
-        console.log('上传失败', err);
+        console.log('下载失败', err);
       });
   };
   downZipFile = () => {
@@ -140,16 +140,28 @@ export default class Index extends Component {
           this.setState({imagePath: 'file://' + downloadDest});
           this.getPath();
         } else {
-          console.log('上传失败');
+          console.log('下载失败');
         }
       })
       .catch(err => {
-        console.log('上传失败', err);
+        console.log('下载失败', err);
       });
   };
   unzipFile = () => {
     const sourcePath = `${RNFS.DocumentDirectoryPath}/reader.zip`;
     const targetPath = `${RNFS.DocumentDirectoryPath}/reader/`;
+    const charset = 'UTF-8';
+    unzip(sourcePath, targetPath, charset)
+      .then(path => {
+        console.log(`unzip completed at ${path}`);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+  unEpubFile = () => {
+    const sourcePath = `${RNFS.DocumentDirectoryPath}/epub/1.epub`;
+    const targetPath = `${RNFS.DocumentDirectoryPath}/epub/1/`;
     const charset = 'UTF-8';
     unzip(sourcePath, targetPath, charset)
       .then(path => {
@@ -181,13 +193,16 @@ export default class Index extends Component {
               <Button title="获取路径" onPress={this.getPath} />
             </View>
             <View style={{marginTop: 20}}>
-              <Button title="下载图片" onPress={this.downFile} />
+              <Button title="下载epub" onPress={this.downFile} />
             </View>
             <View style={{marginTop: 20}}>
-              <Button title="下载文件" onPress={this.downZipFile} />
+              <Button title="下载阅读器" onPress={this.downZipFile} />
             </View>
             <View style={{marginTop: 20}}>
-              <Button title="解析文件" onPress={this.unzipFile} />
+              <Button title="解析阅读器" onPress={this.unzipFile} />
+            </View>
+            <View style={{marginTop: 20}}>
+              <Button title="解析Epub" onPress={this.unEpubFile} />
             </View>
           </View>
           <View style={styles.footerAction}>
