@@ -4989,6 +4989,11 @@ react-native-webview@^9.4.0:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
 
+react-native-zip-archive@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npm.taobao.org/react-native-zip-archive/download/react-native-zip-archive-5.0.2.tgz#cfa2aa8c97dd4ccb2dd8c99812ec7d9e20bf7549"
+  integrity sha1-z6KqjJfdTMst2MmYEux9niC/dUk=
+
 react-native@0.62.2:
   version "0.62.2"
   resolved "https://registry.npm.taobao.org/react-native/download/react-native-0.62.2.tgz#d831e11a3178705449142df19a70ac2ca16bad10"

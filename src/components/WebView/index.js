@@ -31,23 +31,16 @@ export default class Index extends Component {
             allowFileAccess={true} //运行访问本地文件
             javaScriptEnabled={true} //启用js
             allowUniversalAccessFromFileURLs={true}
-            source={{uri: 'file:///android_asset/index.html'}}
+            source={{uri: 'file:///data/user/0/com.cjread/files/reader/index.html'}}
           />
-          {/* <WebView
-            mixedContentMode="always" //允许安全链接页面中加载非安全链接的内容
-            allowFileAccess={true} //运行访问本地文件
-            javaScriptEnabled={true}
-            allowUniversalAccessFromFileURLs={true}
-            source={{uri: 'file:///android_asset/index.html'}}
-          /> */}
-          <View style={styles.footerAction}>
+          {/* <View style={styles.footerAction}>
             <TouchableHighlight
               onPress={this.props.close}
               activeOpacity={1}
               underlayColor="#fcb602">
               <Button title="退出模块" onPress={this.props.close} />
             </TouchableHighlight>
-          </View>
+          </View> */}
         </View>
       </Modal>
     );

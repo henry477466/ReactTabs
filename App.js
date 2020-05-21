@@ -16,7 +16,6 @@ import ScanQRCode from './src/components/ScanQRCode';
 import ImagePicker from './src/components/ImagePicker';
 import NativeFile from './src/components/NativeFile';
 import WebView from './src/components/WebView';
-import Epubjs from './src/components/Epubjs';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +25,6 @@ class App extends React.Component {
       ImagePicker_visible: false,
       NativeFile_visible: false,
       WebView_visible: false,
-      Epubjs_visible: false,
     };
   }
   async changeVim() {
@@ -63,11 +61,6 @@ class App extends React.Component {
       WebView_visible: !this.state.WebView_visible,
     });
   };
-  changeEpub = () => {
-    this.setState({
-      Epubjs_visible: !this.state.Epubjs_visible,
-    });
-  };
   
 
   render() {
@@ -88,9 +81,6 @@ class App extends React.Component {
             <View style={{marginTop: 20}}>
               <Button title="阅读器" onPress={this.changeWeb.bind(this)} />
             </View>
-            <View style={{marginTop: 20}}>
-              <Button title="阅读器" onPress={this.changeEpub.bind(this)} />
-            </View>
           </ScrollView>
           {/* 扫码 */}
           {this.state.ScanQRCode_visible ? (
@@ -107,10 +97,6 @@ class App extends React.Component {
           {/* 阅读器 */}
           {this.state.WebView_visible ? (
             <WebView close={this.changeWeb.bind(this)} />
-          ) : null}
-          {/* 阅读器 */}
-          {this.state.Epubjs_visible ? (
-            <Epubjs close={this.changeEpub.bind(this)} />
           ) : null}
         </SafeAreaView>
       </>
